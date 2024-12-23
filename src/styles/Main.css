@@ -11,8 +11,8 @@
     background-color: rgba(255, 123, 0, 0.747);
     border-radius: 50%;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 30px;
+    left: 30px;
 }
 
 .Main .CircleMain::after {
@@ -24,7 +24,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-100px, 550px) rotate(20deg);
+    transform: translate(-50px, 550px) rotate(20deg);
 }
 
 .Main .CircleMain::before {
@@ -36,7 +36,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(450px, 350px) rotate(20deg);
+    transform: translate(350px, 350px) rotate(20deg);
 }
 
 
@@ -48,14 +48,31 @@
     position: relative;
     background-color: var(--bg);
     height: 80vh;
-    width: 600px;
+    width: 550px;
     padding: 20px;
     border-radius: 30px;
     backdrop-filter: blur(20px);
 }
 
-.Main form h1 {
+.Notice {
+    text-align: center;
+    border-bottom: solid 1px var(--fg);
+}
+
+.Main form .Notice h1 {
+    font-size: 1.7rem;
     color: aliceblue;
+}
+
+.Main form .Notice span {
+    background-color: var(--bg);
+    color: #333333;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+.Main form .Notice p {
+    color: var(--fg);
 }
 
 .FormBox {
@@ -99,6 +116,7 @@ label {
     font-size: 16px;
     font-weight: bold;
     color: var(--fg);
+    cursor: none;
 }
 
 textarea {
@@ -146,11 +164,19 @@ form .Buttons {
 
     .Main form {
         height: 90vh;
-        width: 100%;
+        width: 340px;
     }
 
-    .Main form h1 {
-        font-size: 1.2rem;
+    .Main form .Notice h1 {
+        font-size: 1.1rem;
+    }
+
+    .Main form .Notice span {
+        font-size: 1rem;
+    }
+
+    .Main form .Notice p {
+        font-size: .8rem;
     }
 
     input, textarea {

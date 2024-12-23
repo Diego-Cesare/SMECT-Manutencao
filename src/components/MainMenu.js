@@ -29,7 +29,7 @@ function MainMenu() {
     };
 
     const handleNextClick = () => {
-        navigate("/main", { state: { selectedItem: activeItem || 'Nenhuma Seleção' } });
+        navigate("/main", { state: { selectedItem: activeItem || 'VAZIO' } });
     };
 
     return (

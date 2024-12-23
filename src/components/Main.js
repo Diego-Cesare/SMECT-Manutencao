@@ -7,17 +7,36 @@ import emailjs from '@emailjs/browser';
 function Main() {
     const navigate = useNavigate();
     const location = useLocation();
-    const { selectedItem } = location.state || { selectedItem: "Nenhuma Seleção" }; // Valor padrão
+    const { selectedItem } = location.state || { selectedItem: "VAZIO" }; // Valor padrão
 
     const handlePrevClick = () => {
         // Envia o item ativo para a próxima página
         navigate("/");
     };
 
+    function Msg() {
+        if (selectedItem === "VAZIO") {
+            return (
+                <div className="Notice">
+                    <h1>Você selecionou: <span>{selectedItem}</span></h1>
+                    <p>Por favor, selecione um item no menu anterior</p>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="Notice">
+                    <h1>Você selecionou: <span>{selectedItem}</span></h1>
+                    <p>Liste apenas itens relacionados à {selectedItem}</p>
+                </div>
+            )
+        }
+    }
+
     function sendEmail(e) {
         e.preventDefault();
 
-        if (selectedItem === "Nenhuma Seleção") {
+        if (selectedItem === "VAZIO") {
             alert("Nenhum tipo de manutenção selecionado.\nVolte ao menu anterior e selecione\num tipo de manutenção.");
             return;
         }
@@ -48,7 +67,7 @@ function Main() {
         <div className="Main">
             <div className="CircleMain"></div>
             <form onSubmit={sendEmail}>
-                <h1>Você selecionou: {selectedItem}</h1>
+                {Msg()}
                 <div className="FormBox">
                     <div className="Name">
                         <label htmlFor="">Unidade de ensino</label>
