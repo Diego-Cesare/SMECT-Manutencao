@@ -1,0 +1,129 @@
+@import "Colors.css";
+
+.Main {
+    padding: 50px;
+    position: relative;
+}
+
+.Main .CircleMain {
+    width: 130px;
+    height: 130px;
+    background-color: rgba(255, 123, 0, 0.747);
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.Main .CircleMain::after {
+    content: "";
+    width: 140px;
+    height: 140px;
+    background-color: rgba(247, 0, 255, 0.747);
+    border-radius: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100px, 550px) rotate(20deg);
+}
+
+.Main .CircleMain::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 0, 119, 0.747);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(290px, 350px) rotate(20deg);
+}
+
+
+.Main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg);
+    height: 80vh;
+    width: 600px;
+    padding: 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.Main form h1 {
+    color: aliceblue;
+}
+
+.FormBox {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.Local {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: var(--bg);
+    color:var(--fg);
+    font-weight: 400;
+}
+
+
+.Require {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--fg);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Type input {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+textarea {
+    background-color: var(--bg);
+    color: var(--fg);
+    min-height: 10rem;
+    padding: 10px;
+    resize: vertical;
+}
+
+form .Buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-size: 18px;
+    transition: .3s;
+    border-radius: 10px;
+}
+
+.Buttons button:hover {
+    background-color: rgba(127, 255, 212, .5);
+}

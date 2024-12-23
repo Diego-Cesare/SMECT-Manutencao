@@ -1,0 +1,120 @@
+@import "Colors.css";
+.MainMenu{
+    position: relative;
+    padding: 50px;
+}
+
+.MainMenu .Square {
+    width: 130px;
+    height: 130px;
+    background-color: rgba(255, 123, 0, 0.747);
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.MainMenu .Square::after {
+    content: "";
+    width: 140px;
+    height: 140px;
+    background-color: rgba(247, 0, 255, 0.747);
+    border-radius: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100px, 550px) rotate(20deg);
+}
+
+.MainMenu .Square::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 0, 119, 0.747);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(290px, 350px) rotate(20deg);
+}
+
+
+.MainMenu h1{
+    color: var(--fg);
+    padding: 10px;
+}
+
+.Menu {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    width: 600px;
+    padding: 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.Menu nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    gap: 20px;
+}
+
+.MainMenu nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    width: 300px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--fg);
+    font-size: 1.5em;
+    transition: .3s ease-in-out;
+}
+
+.MainMenu nav a:hover {
+    color: rgba(127, 255, 212, 1);
+    transform: scale(1.1);
+}
+
+.MainMenu nav a.active {
+    background-color: rgb(127, 172, 255);
+    color: white;
+    transform: scale(1.1);
+    
+}
+
+.MainMenu nav .Icon{
+    font-size: 32px;
+}
+
+.MainMenu button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    color: var(--fg);
+    background-color: var(--bg);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.MainMenu button .Icon{
+    font-size: 32px;
+}
+
+.MainMenu button:hover {
+    background-color: rgba(127, 255, 212, .5);
+}
