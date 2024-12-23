@@ -36,7 +36,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(290px, 350px) rotate(20deg);
+    transform: translate(450px, 350px) rotate(20deg);
 }
 
 
@@ -51,7 +51,7 @@
     width: 600px;
     padding: 20px;
     border-radius: 30px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
 }
 
 .Main form h1 {
@@ -76,11 +76,11 @@ input {
     border: none;
     outline: none;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
     background-color: var(--bg);
     color:var(--fg);
-    font-weight: 400;
+    font-weight: 600;
 }
 
 
@@ -96,8 +96,9 @@ label {
 }
 
 .Type input {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
+    color: var(--fg);
 }
 
 textarea {
@@ -106,6 +107,16 @@ textarea {
     min-height: 10rem;
     padding: 10px;
     resize: vertical;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+textarea::placeholder {
+    color: var(--fg);
 }
 
 form .Buttons {
@@ -126,4 +137,113 @@ form .Buttons {
 
 .Buttons button:hover {
     background-color: rgba(127, 255, 212, .5);
+}
+
+@media screen and (max-width: 360px) {
+    .Main {
+        padding: 10px;
+    }
+
+    .Main form{
+        width: 350px;
+        height: 95vh;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+    input, textarea {
+        font-size: 14px;
+        margin-top: 2px;
+    }
+
+    .Main .CircleMain::after {
+        transform: translate(-20px, 480px) rotate(20deg);
+    }
+
+    .Main .CircleMain::before {
+        transform: translate(220px, 180px) rotate(20deg);
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+    .Main {
+        padding: 10px;
+    }
+
+    .Main form{
+        width: 404px;
+        height: 95vh;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+    input, textarea {
+        font-size: 16px;
+        margin-top: 2px;
+    }
+
+    .Main .CircleMain::after {
+        transform: translate(-20px, 480px) rotate(20deg);
+    }
+
+    .Main .CircleMain::before {
+        transform: translate(220px, 180px) rotate(20deg);
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .Main form {
+        width: 380px;
+        height: 95vh;
+    }
+
+    .Main nav a {
+        font-size: 26px;
+        width: 100%;
+    }
+
+    .Main nav .Icon {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .Main form {
+        width: 418px;
+        height: 95vh;
+    }
+
+    .Main nav a {
+        font-size: 26px;
+        width: 100%;
+    }
+
+    .Main nav .Icon {
+        font-size: 26px;
+    }
+
+    .Main .CircleMain {
+        transform: translate(50px, 70px) rotate(20deg);
+    }
+
+    .Main .CircleMain::after {
+        transform: translate(200px, 490px) rotate(20deg);
+    }
+
+    .Main .CircleMain::before {
+        transform: translate(220px, 130px) rotate(20deg);
+    }
+
 }

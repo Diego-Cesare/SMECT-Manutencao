@@ -1,5 +1,6 @@
 @import "Colors.css";
-.MainMenu{
+
+.MainMenu {
     position: relative;
     padding: 50px;
 }
@@ -35,11 +36,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(290px, 350px) rotate(20deg);
+    transform: translate(450px, 350px) rotate(20deg);
 }
 
 
-.MainMenu h1{
+.MainMenu h1 {
     color: var(--fg);
     padding: 10px;
 }
@@ -53,7 +54,7 @@
     width: 600px;
     padding: 20px;
     border-radius: 30px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
 }
 
 .Menu nav {
@@ -87,10 +88,10 @@
     background-color: rgb(127, 172, 255);
     color: white;
     transform: scale(1.1);
-    
+
 }
 
-.MainMenu nav .Icon{
+.MainMenu nav .Icon {
     font-size: 32px;
 }
 
@@ -111,10 +112,140 @@
     transition: .3s;
 }
 
-.MainMenu button .Icon{
+.MainMenu button .Icon {
     font-size: 32px;
 }
 
 .MainMenu button:hover {
     background-color: rgba(127, 255, 212, .5);
+}
+
+@media screen and (max-width: 360px) {
+
+    .MainMenu {
+        padding: 5px;
+    }
+
+    .Menu {
+        width: 350px;
+        height: 95vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .Menu nav {
+        height: 100vh;
+    }
+
+    .MainMenu nav a {
+        font-size: 22px;
+        width: 250px;
+    }
+
+    .MainMenu nav .Icon {
+        font-size: 22px;
+    }
+
+    .MainMenu button .Icon {
+        font-size: 24px;
+    }
+
+    .MainMenu button {
+        font-size: 1rem;
+    }
+
+    .MainMenu .Square::after {
+        transform: translate(-20px, 480px) rotate(20deg);
+    }
+
+    .MainMenu .Square::before {
+        transform: translate(220px, 180px) rotate(20deg);
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+
+    .MainMenu {
+        padding: 5px;
+    }
+
+    .Menu {
+        width: 404px;
+        height: 95vh;
+    }
+
+    .Menu h1 {
+        font-size: 32px;
+    }
+
+    .Menu nav {
+        height: 70vh;
+    }
+
+    .MainMenu nav a {
+        font-size: 30px;
+        width: 250px;
+    }
+
+    .MainMenu nav .Icon {
+        font-size: 30px;
+    }
+
+    .MainMenu button .Icon {
+        font-size: 30px;
+    }
+
+    .MainMenu button {
+        font-size: 1.4rem;
+    }
+
+    .MainMenu .Square::after {
+        transform: translate(-20px, 480px) rotate(20deg);
+    }
+
+    .MainMenu .Square::before {
+        transform: translate(220px, 180px) rotate(20deg);
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .Menu {
+        width: 380px;
+        height: 95vh;
+    }
+
+    .MainMenu nav a {
+        font-size: 26px;
+        width: 100%;
+    }
+
+    .MainMenu nav .Icon {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+
+    .Menu {
+        width: 418px;
+        height: 95vh;
+    }
+
+    .MainMenu nav a {
+        font-size: 26px;
+        width: 100%;
+    }
+
+    .MainMenu .Square::after {
+        transform: translate(-20px, 480px) rotate(20deg);
+    }
+
+    .MainMenu .Square::before {
+        transform: translate(220px, 180px) rotate(20deg);
+    }
+
 }

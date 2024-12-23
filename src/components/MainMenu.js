@@ -1,12 +1,22 @@
 import '../styles/MainMenu.css'
 import { useState } from "react";
-import { PiArrowCircleRightDuotone } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
+
+import {
+    PiLampPendantDuotone,
+    PiArrowCircleRightDuotone,
+    PiSnowflakeDuotone,
+    PiHammerDuotone,
+    PiHouseLineDuotone,
+    PiShowerDuotone,
+    PiTruckTrailerDuotone,
+    PiWarningCircleDuotone,
+    PiToiletDuotone,
+ } from "react-icons/pi";
+
 function createLink(icon, name, isActive, onClick) {
     return (
-        <a href="#" className={`menuItem ${isActive ? "active" : ""}`} onClick={onClick}>
-            {icon} {name}
-        </a>
+        <a href="#" className={`menuItem ${isActive ? "active" : ""}`} onClick={onClick}>{icon} {name}</a>
     );
 }
 
@@ -29,50 +39,50 @@ function MainMenu() {
                 <h1>Selecione o tipo de manutenção</h1>
                 <nav>
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiLampPendantDuotone className="Icon" />,
                         "Elétrica",
                         activeItem === "Elétrica",
                         () => handleClick("Elétrica")
                     )}
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiShowerDuotone className="Icon" />,
                         "Hidraulica",
                         activeItem === "Hidraulica",
                         () => handleClick("Hidraulica")
                     )}
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiHammerDuotone className="Icon" />,
                         "Carpintaria",
                         activeItem === "Carpintaria",
                         () => handleClick("Carpintaria")
                     )}
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiHouseLineDuotone className="Icon" />,
                         "Alvenaria",
                         activeItem === "Alvenaria",
                         () => handleClick("Alvenaria")
                     )}
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiToiletDuotone className="Icon" />,
                         "Esgoto",
                         activeItem === "Esgoto",
                         () => handleClick("Esgoto")
                     )}
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiSnowflakeDuotone className="Icon" />,
                         "Ar-Condicionado",
                         activeItem === "Ar-Condicionado",
                         () => handleClick("Ar-Condicionado")
                     )}
 
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiTruckTrailerDuotone className="Icon" />,
                         "Transporte",
                         activeItem === "Transporte",
                         () => handleClick("Transporte")
                     )}
                     {createLink(
-                        <PiArrowCircleRightDuotone className="Icon" />,
+                        <PiWarningCircleDuotone className="Icon" />,
                         "Outros",
                         activeItem === "Outros",
                         () => handleClick("Outros")
