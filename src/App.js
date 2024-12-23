@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
     return (
-      <Router>
+      <Router basename="/SMECT-Manutencao">
           <Routes>
               <Route path="/" element={<MainMenu />} />
               <Route path="/main" element={<Main />} />
