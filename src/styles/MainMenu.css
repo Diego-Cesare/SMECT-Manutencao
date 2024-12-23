@@ -119,3 +119,52 @@
 .MainMenu button:hover {
     background-color: rgba(127, 255, 212, .5);
 }
+
+@media (max-width: 768px) {
+    .MainMenu {
+        padding: 10px;
+    }
+
+    .Menu {
+        height: 90vh;
+        width: 100%;
+        padding: 40px;
+    }
+
+    .Menu h1 {
+        font-size: 1.2rem;
+    }
+
+    .Menu nav {
+        height: 100vh;
+        gap: 20px;
+    }
+
+    .MainMenu nav a {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    .MainMenu nav .Icon {
+        font-size: 1.2rem;
+    }
+
+    .MainMenu button {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+        margin-top: 20px;
+    }
+
+    .MainMenu button .Icon {
+        font-size: 1.2rem;
+    }
+
+    .MainMenu .Square::after {
+        transform: translate(-50px, 450px) rotate(20deg);
+    }
+    
+    .MainMenu .Square::before {
+        transform: translate(190px, 50px) rotate(20deg);
+    }
+    
+}

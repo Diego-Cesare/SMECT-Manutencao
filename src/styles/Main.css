@@ -138,3 +138,42 @@ form .Buttons {
 .Buttons button:hover {
     background-color: rgba(127, 255, 212, .5);
 }
+
+@media (max-width: 768px) {
+    .Main {
+        padding: 10px;
+    }
+
+    .Main form {
+        height: 90vh;
+        width: 100%;
+    }
+
+    .Main form h1 {
+        font-size: 1.2rem;
+    }
+
+    input, textarea {
+        font-size: 12px;
+        padding: 10px 8px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    .Buttons button {
+        font-size: 14px;
+        padding: 8px 12px;
+        margin-top: 20px;
+    }
+
+    .Main .CircleMain::after {
+        transform: translate(-50px, 450px) rotate(20deg);
+    }
+    
+    .Main .CircleMain::before {
+        transform: translate(190px, 50px) rotate(20deg);
+    }
+    
+}
