@@ -157,6 +157,12 @@ form .Buttons {
     background-color: rgba(127, 255, 212, .5);
 }
 
+.Buttons button:disabled {
+    background-color: rgb(39, 39, 39);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
     .Main {
         padding: 10px;

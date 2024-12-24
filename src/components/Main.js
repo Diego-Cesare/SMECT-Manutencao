@@ -14,6 +14,18 @@ function Main() {
         navigate("/");
     };
 
+    function validateButton() {
+        if (selectedItem === "VAZIO") {
+            return (
+                <button disabled>Enviar</button>
+            )
+        } else {
+            return (
+                <button type='submit'>Enviar</button>
+            )
+        }
+    }
+
     function Msg() {
         if (selectedItem === "VAZIO") {
             return (
@@ -35,11 +47,6 @@ function Main() {
 
     function sendEmail(e) {
         e.preventDefault();
-
-        if (selectedItem === "VAZIO") {
-            alert("Nenhum tipo de manutenção selecionado.\nVolte ao menu anterior e selecione\num tipo de manutenção.");
-            return;
-        }
 
         emailjs.sendForm(
             "service_xi26o83",
@@ -100,7 +107,7 @@ function Main() {
                     <button onClick={handlePrevClick}>
                         Voltar
                     </button>
-                    <button type="submit">Enviar</button>
+                    {validateButton()}
                 </div>
             </form>
         </div>
