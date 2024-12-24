@@ -1,0 +1,29 @@
+:root{
+    --bg: #1a1a1a;
+    --alt: #2f2f2f;
+    --fg: #e1e1e1;
+    --green: #42d392;
+    --blue: #5d8fe8;
+}
+
+/* Tema claro */
+@media (prefers-color-scheme: light) {
+    :root{
+        --bg: #ffffff;
+        --alt: #f1f1f1;
+        --fg: #213547;
+        --green: #42d392;
+        --blue: #5d8fe8;
+    }
+    
+}
+
+@keyframes degrade {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}

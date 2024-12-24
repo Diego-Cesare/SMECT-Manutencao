@@ -72,7 +72,6 @@ function Main() {
 
     return (
         <div className="Main">
-            <div className="CircleMain"></div>
             <form onSubmit={sendEmail}>
                 {Msg()}
                 <div className="FormBox">

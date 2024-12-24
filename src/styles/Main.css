@@ -1,44 +1,4 @@
-@import "Colors.css";
-
-.Main {
-    padding: 50px;
-    position: relative;
-}
-
-.Main .CircleMain {
-    width: 130px;
-    height: 130px;
-    background-color: rgba(255, 123, 0, 0.747);
-    border-radius: 50%;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.Main .CircleMain::after {
-    content: "";
-    width: 140px;
-    height: 140px;
-    background-color: rgba(247, 0, 255, 0.747);
-    border-radius: 10%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50px, 550px) rotate(20deg);
-}
-
-.Main .CircleMain::before {
-    content: "";
-    width: 200px;
-    height: 200px;
-    background-color: rgba(255, 0, 119, 0.747);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(350px, 350px) rotate(20deg);
-}
-
+@import "schemes.css";
 
 .Main form {
     display: flex;
@@ -46,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: var(--bg);
+    background-color: var(--alt);
     height: 80vh;
     width: 550px;
     padding: 20px;
@@ -56,23 +16,28 @@
 
 .Notice {
     text-align: center;
-    border-bottom: solid 1px var(--fg);
 }
 
 .Main form .Notice h1 {
     font-size: 1.7rem;
-    color: aliceblue;
+    color: var(--fg);
 }
 
 .Main form .Notice span {
-    background-color: var(--bg);
-    color: #333333;
     padding: 0px 10px;
-    border-radius: 5px;
+    background: linear-gradient(45deg, var(--green), var(--blue));
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .Main form .Notice p {
-    color: var(--fg);
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, var(--green), var(--blue));
+    background-size: 400% 100%;
+    animation: degrade 20s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .FormBox {
@@ -154,11 +119,12 @@ form .Buttons {
 }
 
 .Buttons button:hover {
-    background-color: rgba(127, 255, 212, .5);
+    background: var(--green);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 0%, var(--green) 100%);
 }
 
 .Buttons button:disabled {
-    background-color: rgb(39, 39, 39);
+    color: var(--fg);
     opacity: 0.5;
     cursor: not-allowed;
 }

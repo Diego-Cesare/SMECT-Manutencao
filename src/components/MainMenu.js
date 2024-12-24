@@ -34,7 +34,6 @@ function MainMenu() {
 
     return (
         <div className="MainMenu">
-            <div className="Square"></div>
             <div className="Menu">
                 <h1>Selecione o tipo de manutenção</h1>
                 <nav>
