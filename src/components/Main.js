@@ -36,13 +36,13 @@ function Main() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs
-            .sendForm(
-                process.env.REACT_APP_EMAIL_SERVICE_ID,
-                process.env.REACT_APP_EMAIL_TEMPLATE_ID,
-                e.target,
-                process.env.REACT_APP_EMAIL_PUBLIC_KEY
-            )
+        emailjs.sendForm(
+            "service_xi26o83",
+            "template_4gyqkkj",
+            e.target,
+            "2hKcOoKCHUYuViiaO",
+        )
+
             .then(
                 () =>
                     alert(
