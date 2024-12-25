@@ -1,79 +1,66 @@
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
-import '../styles/Main.css'
+import { useLocation, useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import "../styles/Main.css";
 
-import emailjs from '@emailjs/browser';
+function Message({ selectedItem }) {
+    return selectedItem === "VAZIO" ? (
+        <div className="Notice">
+            <h1>{selectedItem}</h1>
+            <p>Por favor, selecione um item no menu anterior</p>
+        </div>
+    ) : (
+        <div className="Notice">
+            <h1>{selectedItem}</h1>
+            <p>Liste apenas itens relacionados à {selectedItem}</p>
+        </div>
+    );
+}
+
+function ValidateButton({ selectedItem }) {
+    return selectedItem === "VAZIO" ? (
+        <button disabled>Enviar</button>
+    ) : (
+        <button type="submit">Enviar</button>
+    );
+}
 
 function Main() {
     const navigate = useNavigate();
     const location = useLocation();
-    const { selectedItem } = location.state || { selectedItem: "VAZIO" }; // Valor padrão
+    const { selectedItem } = location.state || { selectedItem: "VAZIO" };
 
     const handlePrevClick = () => {
-        // Envia o item ativo para a próxima página
         navigate("/");
     };
 
-    function validateButton() {
-        if (selectedItem === "VAZIO") {
-            return (
-                <button disabled>Enviar</button>
-            )
-        } else {
-            return (
-                <button type='submit'>Enviar</button>
-            )
-        }
-    }
-
-    function Msg() {
-        if (selectedItem === "VAZIO") {
-            return (
-                <div className="Notice">
-                    <h1>Você selecionou: <span>{selectedItem}</span></h1>
-                    <p>Por favor, selecione um item no menu anterior</p>
-                </div>
-            )
-        }
-        else {
-            return (
-                <div className="Notice">
-                    <h1>Você selecionou: <span>{selectedItem}</span></h1>
-                    <p>Liste apenas itens relacionados à {selectedItem}</p>
-                </div>
-            )
-        }
-    }
-
-    function sendEmail(e) {
+    const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm(
-            "service_xi26o83",
-            "template_4gyqkkj",
-            e.target,
-            "2hKcOoKCHUYuViiaO",
-        )
-
+        emailjs
+            .sendForm(
+                process.env.REACT_APP_EMAIL_SERVICE_ID,
+                process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+                e.target,
+                process.env.REACT_APP_EMAIL_PUBLIC_KEY
+            )
             .then(
-                (result) => {
+                () =>
                     alert(
-                        "Seu pedido foi enviado com sucesso!\nEm breve, uma equipe irá até sua unidade.",
-                    );
-                },
-                (error) => {
+                        "Seu pedido foi enviado com sucesso! Em breve, uma equipe irá até sua unidade."
+                    ),
+                () =>
                     alert(
-                        "No momento, não é possível enviar seu pedido.\nAguarde alguns instantes\ne tente novamente.",
-                    );
-                },
+                        "No momento, não é possível enviar seu pedido. Aguarde alguns instantes e tente novamente."
+                    )
             );
+
         e.target.reset();
-    }
+    };
 
     return (
         <div className="Main">
             <form onSubmit={sendEmail}>
-                {Msg()}
+                <Message selectedItem={selectedItem} />
                 <div className="FormBox">
                     <div className="Name">
                         <label htmlFor="">Unidade de ensino</label>
@@ -86,7 +73,7 @@ function Main() {
                         </div>
                         <div className="Phone">
                             <label htmlFor="phone">Telefone</label>
-                            <input id="phone" type="text" name="Telefone" required />
+                            <input id="phone" type="tel" name="Telefone" required />
                         </div>
                     </div>
                     <div className="Type">
@@ -103,14 +90,14 @@ function Main() {
                     </div>
                 </div>
                 <div className="Buttons">
-                    <button onClick={handlePrevClick}>
+                    <button type="button" onClick={handlePrevClick}>
                         Voltar
                     </button>
-                    {validateButton()}
+                    <ValidateButton selectedItem={selectedItem} />
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
-export default Main
+export default Main;

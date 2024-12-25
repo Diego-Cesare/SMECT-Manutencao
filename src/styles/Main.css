@@ -1,5 +1,11 @@
 @import "schemes.css";
 
+.Main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .Main form {
     display: flex;
     flex-direction: column;
@@ -19,11 +25,7 @@
 }
 
 .Main form .Notice h1 {
-    font-size: 1.7rem;
-    color: var(--fg);
-}
-
-.Main form .Notice span {
+    font-size: 3rem;
     padding: 0px 10px;
     background: linear-gradient(45deg, var(--green), var(--blue));
     background-size: 100% 100%;
@@ -33,11 +35,7 @@
 
 .Main form .Notice p {
     font-size: 1.1rem;
-    background: linear-gradient(45deg, var(--green), var(--blue));
-    background-size: 400% 100%;
-    animation: degrade 20s linear infinite alternate;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--fg);
 }
 
 .FormBox {
@@ -130,17 +128,13 @@ form .Buttons {
 }
 
 @media (max-width: 768px) {
-    .Main {
-        padding: 10px;
-    }
-
     .Main form {
-        height: 90vh;
-        width: 340px;
+        height: 95vh;
+        width: 95%;
     }
 
     .Main form .Notice h1 {
-        font-size: 1.1rem;
+        font-size: 3rem;
     }
 
     .Main form .Notice span {
@@ -148,7 +142,7 @@ form .Buttons {
     }
 
     .Main form .Notice p {
-        font-size: .8rem;
+        font-size: .9rem;
     }
 
     input, textarea {

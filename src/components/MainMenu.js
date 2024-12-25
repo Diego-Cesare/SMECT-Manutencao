@@ -12,13 +12,18 @@ import {
     PiTruckTrailerDuotone,
     PiWarningCircleDuotone,
     PiToiletDuotone,
- } from "react-icons/pi";
+} from "react-icons/pi";
 
-function createLink(icon, name, isActive, onClick) {
-    return (
-        <a href="#" className={`menuItem ${isActive ? "active" : ""}`} onClick={onClick}>{icon} {name}</a>
-    );
-}
+const menuItems = [
+    { name: "Elétrica", icon: <PiLampPendantDuotone className="Icon" /> },
+    { name: "Hidraulica", icon: <PiShowerDuotone className="Icon" /> },
+    { name: "Carpintaria", icon: <PiHammerDuotone className="Icon" /> },
+    { name: "Alvenaria", icon: <PiHouseLineDuotone className="Icon" /> },
+    { name: "Esgoto", icon: <PiToiletDuotone className="Icon" /> },
+    { name: "Ar-Condicionado", icon: <PiSnowflakeDuotone className="Icon" /> },
+    { name: "Transporte", icon: <PiTruckTrailerDuotone className="Icon" /> },
+    { name: "Outros", icon: <PiWarningCircleDuotone className="Icon" /> },
+];
 
 function MainMenu() {
     const navigate = useNavigate();
@@ -35,57 +40,22 @@ function MainMenu() {
     return (
         <div className="MainMenu">
             <div className="Menu">
-                <h1>Selecione o tipo de manutenção</h1>
+                <div className='TitleName'>
+                    <h1>SMECT</h1>
+                    <div className='SubTitle'>
+                        <h3>Selecione o tipo de</h3>
+                        <h3>manutenção</h3>
+                    </div>
+                </div>
                 <nav>
-                    {createLink(
-                        <PiLampPendantDuotone className="Icon" />,
-                        "Elétrica",
-                        activeItem === "Elétrica",
-                        () => handleClick("Elétrica")
-                    )}
-                    {createLink(
-                        <PiShowerDuotone className="Icon" />,
-                        "Hidraulica",
-                        activeItem === "Hidraulica",
-                        () => handleClick("Hidraulica")
-                    )}
-                    {createLink(
-                        <PiHammerDuotone className="Icon" />,
-                        "Carpintaria",
-                        activeItem === "Carpintaria",
-                        () => handleClick("Carpintaria")
-                    )}
-                    {createLink(
-                        <PiHouseLineDuotone className="Icon" />,
-                        "Alvenaria",
-                        activeItem === "Alvenaria",
-                        () => handleClick("Alvenaria")
-                    )}
-                    {createLink(
-                        <PiToiletDuotone className="Icon" />,
-                        "Esgoto",
-                        activeItem === "Esgoto",
-                        () => handleClick("Esgoto")
-                    )}
-                    {createLink(
-                        <PiSnowflakeDuotone className="Icon" />,
-                        "Ar-Condicionado",
-                        activeItem === "Ar-Condicionado",
-                        () => handleClick("Ar-Condicionado")
-                    )}
-
-                    {createLink(
-                        <PiTruckTrailerDuotone className="Icon" />,
-                        "Transporte",
-                        activeItem === "Transporte",
-                        () => handleClick("Transporte")
-                    )}
-                    {createLink(
-                        <PiWarningCircleDuotone className="Icon" />,
-                        "Outros",
-                        activeItem === "Outros",
-                        () => handleClick("Outros")
-                    )}
+                    {menuItems.map((item) => (
+                        <li
+                            key={item.name}
+                            className={`menuItem ${activeItem === item.name ? "active" : ""}`}
+                            onClick={() => handleClick(item.name)}>
+                            {item.icon} {item.name}
+                        </li>
+                    ))}
                 </nav>
                 <button onClick={handleNextClick}>
                     <PiArrowCircleRightDuotone className="Icon" /> Proximo
