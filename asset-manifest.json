@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SMECT-Manutencao/static/css/main.5d4b12ff.css",
-    "main.js": "/SMECT-Manutencao/static/js/main.5c658bbc.js",
+    "main.css": "/SMECT-Manutencao/static/css/main.56b151a3.css",
+    "main.js": "/SMECT-Manutencao/static/js/main.f4b589d8.js",
     "static/js/488.8e8cafef.chunk.js": "/SMECT-Manutencao/static/js/488.8e8cafef.chunk.js",
     "index.html": "/SMECT-Manutencao/index.html",
-    "main.5d4b12ff.css.map": "/SMECT-Manutencao/static/css/main.5d4b12ff.css.map",
-    "main.5c658bbc.js.map": "/SMECT-Manutencao/static/js/main.5c658bbc.js.map",
+    "main.56b151a3.css.map": "/SMECT-Manutencao/static/css/main.56b151a3.css.map",
+    "main.f4b589d8.js.map": "/SMECT-Manutencao/static/js/main.f4b589d8.js.map",
     "488.8e8cafef.chunk.js.map": "/SMECT-Manutencao/static/js/488.8e8cafef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d4b12ff.css",
-    "static/js/main.5c658bbc.js"
+    "static/css/main.56b151a3.css",
+    "static/js/main.f4b589d8.js"
   ]
 }
